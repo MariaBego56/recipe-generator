@@ -15,11 +15,19 @@
   </header>
   <main>
     <h2> Enjoy the ability of creating any dish using the leftovers in your kitchen</h2>
-
-    <form>
-      <input type="text" placeholder="what is in your fridge" autofocus autocomplete />
-      <input type="submit" />
+    <form id="ingredient-form">
+      <input type="text" id="ingredient-input" placeholder="What's in your fridge?" autofocus required />
+      <button type="submit">Add</button>
     </form>
+
+
+    <form id="ingredient-form">
+      <input type="text" placeholder="what is in your fridge" autofocus required autocomplete="on" />
+      <button type="submit">Add ingredients</button>
+    </form>
+    <ul id="ingredient-list">
+
+    </ul>
   </main>
   <footer> This was coded by<a href="https://www.technicalcommunicatormaria.co.uk/" target="_blank"> Maria de la
       Serna</a> is open sourced in <a href="https://github.com/MariaBego56/recipe-generator" target="_blank">GitHub
