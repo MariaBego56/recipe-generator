@@ -33,11 +33,11 @@ text-align: left;
   padding: 15px;
   display: flex;
 }
-.AddYourIngredients{
+.AddYourIngredients{  
 margin: 30px auto;
   padding: 20px;
  width:80%;
- background-color: rgb ( 171, 219, 227, 0.6);
+ background-color: rgb(171, 219, 227, 0.6);
   border-radius: 25px;
 
 }
