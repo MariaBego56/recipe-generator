@@ -17,7 +17,7 @@ h1{
 }
 
 header{
-  margin: 30px auto;
+  margin-bottom: 30px;
   padding:10px;
   
 }
@@ -30,9 +30,9 @@ color: #060270;
 text-align: left;
 }
 #ingredient-form{
-  margin: 30px auto;
   padding: 15px;
   border-radius: 25px;
+  display: flex;
 }
 .AddYourIngredients{
 margin: 30px auto;
