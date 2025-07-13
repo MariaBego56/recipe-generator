@@ -26,7 +26,7 @@ h2 {
 font-weight: 650;
 font-size: 25;
 line-height: 1.5;
-color: #060270;
+color: rgb(6, 2, 112);
 text-align: left;
 }
 #ingredient-form{
@@ -48,7 +48,7 @@ margin: 30px auto;
     margin-left: 20px;
     border-radius: 25px;
     border-color: #060270;
-    background-color: rgba(168, 198, 206, 0.6);
+    background-color: rgba(6, 2, 112, 0.6);
     color:honeydew;
     font-size: 16px;
     font-weight: 650;
