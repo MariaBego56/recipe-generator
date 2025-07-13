@@ -4,8 +4,9 @@ body{
 
 }
 .container{
-  margin:120px auto;
+  margin: 120px; auto;
 max-width:600px;
+
 }
 h1{
   font-weight: 800;
@@ -15,7 +16,7 @@ h1{
   text-align: center;
 }
 header{
-  margin: 200px auto;
+  margin: 40px auto;
   padding:20px;
 
 }
