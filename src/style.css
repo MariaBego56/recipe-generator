@@ -4,7 +4,8 @@ body{
 
 }
 a{
-  color:rgb(6, 2, 112)
+  color:rgb(59, 55, 175);
+  text-decoration: none;
 }
 .container{
   margin: 60px auto;
