@@ -37,11 +37,13 @@ text-align: left;
 .AddYourIngredients{
 margin: 30px auto;
   padding: 15px;
+  width:80px;
   border-radius: 25px;
 
 }
 #addIngrerdients{
   margin: 30px auto;
-    padding: 15px;
-    border-radius: 25px;
+    padding: 20px;
+    margin-left: 10px;
+    border-radius: 25px none;
 }
