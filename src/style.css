@@ -1,3 +1,20 @@
 body{
   background-color:honeydew;
 }
+
+#ingredient-form{
+  margin: 30px auto;
+  padding: 15px;
+  border-radius: 25px;
+}
+.AddYourIngredients{
+margin: 30px auto;
+  padding: 15px;
+  border-radius: 25px;
+
+}
+#addIngrerdients{
+  margin: 30px auto;
+    padding: 15px;
+    border-radius: 25px;
+}
