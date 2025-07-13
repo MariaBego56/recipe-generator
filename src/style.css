@@ -37,8 +37,9 @@ text-align: left;
 margin: 30px auto;
   padding: 20px;
  width:80%;
- background-color: rgb(171, 219, 227, 0.6);
+ background-color: rgb(171, 219, 227, 0.7);
   border-radius: 25px;
+  border-color: #060270;
 
 }
 #addIngredients{
@@ -47,8 +48,8 @@ margin: 30px auto;
     margin-left: 20px;
     border-radius: 25px;
     border-color: #060270;
-    background-color: rgb(118, 181, 197, 0.6);
-    color:#060270;
+    background-color: rgba(168, 198, 206, 0.6);
+    color:honeydew;
     font-size: 16px;
     font-weight: 650;
 }
