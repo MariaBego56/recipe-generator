@@ -31,19 +31,18 @@ text-align: left;
 }
 #ingredient-form{
   padding: 15px;
-  border-radius: 25px;
   display: flex;
 }
 .AddYourIngredients{
 margin: 30px auto;
-  padding: 15px;
-  width:80%;
-  border-radius: 25px;
+  padding: 20px;
+ max-width:80%;
+  border-radius: 25px none;
 
 }
 #addIngrerdients{
   margin: 30px auto;
     padding: 20px;
-    margin-left: 10px;
+    margin-left: 20px;
     border-radius: 25px none;
 }
