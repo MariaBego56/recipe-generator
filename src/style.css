@@ -33,7 +33,7 @@ font-size: 18px;
 color: rgb(6, 2, 112);
 text-align: center;
 }
-#ingredient-form{
+#recipe-generator-form{
   padding: 15px;
   display: flex;
 }
