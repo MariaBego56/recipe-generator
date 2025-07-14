@@ -5,11 +5,9 @@ let recipeFormElement = document.querySelector("#recipeGeneratorForm");
 recipeFormElement = addEventListener("submit", generateIngredientsList);
 
 
-
   let input = document.querySelector(".AddYourIngredients");
   let rawIngredients = input.value.trim();
   if (rawIngredients.length === 0) return;
-
 
   let ingredients = rawIngredients.split(",").map(item => item.trim()).filter(item => item !== "");
 
