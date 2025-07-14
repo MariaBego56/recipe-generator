@@ -34,13 +34,14 @@ color: rgb(6, 2, 112);
 text-align: center;
 }
 #recipeGeneratorForm{
-  padding: 15px;
+  padding: 10px;
   display: flex;
 }
 .AddYourIngredients{  
 margin: 30px auto;
   padding: 10px;
  width:70%;
+  margin-bottom: 10px;
  background-color: rgba(171, 219, 227, 0.6);
   border-radius: 25px;
   border-color: #060270;
@@ -52,7 +53,7 @@ margin: 30px auto;
   margin: 30px auto;
     padding: 10px;
     margin-left: 20px;
-    margin-bottom: 10px;
+   
     border-radius: 25px;
     border-color: #060270;
     background-color: rgba(6, 2, 112, 0.6);
