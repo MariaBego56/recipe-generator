@@ -17,8 +17,8 @@ recipeFormElement = addEventListener("submit", generateIngredientsList);
     
     let li = document.createElement("li");
     let span = document.createElement("span");
-    li.appendChild(span);
-    list.appendChild(li);
+    li.appendChild(span); //span appears inside the li
+    list.appendChild(li); //the li with the span inside appears within my ul. This is needed to apply successfully the typewriter effect. 
 
     new Typewriter(span, {
       strings: ingredient,
