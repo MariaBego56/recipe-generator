@@ -1,11 +1,10 @@
-function generateIngredientsList(event){
-event.preventDefault();
- alert("creating your recipe");
-
-
 let recipeFormElement = document.querySelector("#recipeGeneratorForm");
 recipeFormElement.addEventListener("submit", generateIngredientsList);
 
+function generateIngredientsList(event){
+event.preventDefault();
+ alert("creating your recipe...");
+ console.log
 
   let input = document.querySelector(".AddYourIngredients");
   let rawIngredients = input.value.trim();
