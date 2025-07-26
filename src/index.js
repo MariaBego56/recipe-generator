@@ -4,7 +4,7 @@ recipeFormElement.addEventListener("submit", generateIngredientsList);
 function generateIngredientsList(event){
 event.preventDefault();
  alert("creating your recipe...");
- console.log
+ console.log("JavaScript is connected");
 
   let input = document.querySelector(".AddYourIngredients");
   let rawIngredients = input.value.trim();
