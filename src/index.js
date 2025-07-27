@@ -47,3 +47,15 @@ ingredients.forEach((ingredient) => {
   });
 
 }
+function enableRecipeButton() {
+  const recipeButton = document.querySelector("#generateRecipe");
+  recipeButton.style.display = "inline-block";
+
+  recipeButton.addEventListener("click", () => {
+    const recipeBox = document.querySelector("#recipeResult");
+    recipeBox.innerHTML = `
+      <h3>Tonight's Recipe:</h3>
+      <p>A delicious creation made from your kitchen findings! 🍽️</p>
+    `;
+  });
+}

@@ -21,12 +21,15 @@
       <form id="recipeGeneratorForm">
         <input type="text" class="AddYourIngredients" placeholder="what is it in your kitchen?" autofocus required
           autocomplete="on" />
-        <button type="submit" id="addIngredients">Create recipe</button>
+        <button type="submit" id="addIngredients">Add Ingredients</button>
       </form>
       <div class="ingredientsList"> Ingredients hiding in my kitchen!
         <ul id="ingredient-list">
         </ul>
-        <strong>What's for dinner tonight?</strong>
+        <strong>What's for dinner tonight?</strong><button id="generateRecipe" style="display: none;">Show my
+          recipe</button>
+        <div id="recipeResult"></div>
+
       </div>
 
     </main>
