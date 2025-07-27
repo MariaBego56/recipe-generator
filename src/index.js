@@ -1,12 +1,14 @@
+
+
+function generateIngredientsList(event){
+event.preventDefault();
+ alert("creating your recipe...");
 const addedIngredients = new Set();
 
 let recipeFormElement = document.querySelector("#recipeGeneratorForm");
 recipeFormElement.addEventListener("submit", generateIngredientsList);
 
 
-function generateIngredientsList(event){
-event.preventDefault();
- alert("creating your recipe...");
 
 
   let input = document.querySelector(".AddYourIngredients");
