@@ -32,11 +32,18 @@ ingredients.forEach((ingredient) => {
     li.appendChild(span); 
     list.appendChild(li); 
 
-    new Typewriter(span, {
+    const tw = new Typewriter(span, {
       strings: ingredient,
       autoStart: true,
       delay: 50,
     });
+
+    if (index === ingredients.length -1) {
+ tw.callFunction(() => {
+        alert("Creating recipe...");
+         enableRecipeButton();
+ });
+ }
   });
 
 }
