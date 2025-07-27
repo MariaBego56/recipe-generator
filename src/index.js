@@ -1,13 +1,11 @@
 
-console.log("JavaScript is loaded");
+
 function generateIngredientsList(event){
 event.preventDefault();
  alert("creating your recipe...");
 const addedIngredients = new Set();
 
-console.log("Form submitted");
-console.log("Raw input:", input.value);
-console.log("Ingredients list:", ingredients);
+
 
 let recipeFormElement = document.querySelector("#recipeGeneratorForm");
 recipeFormElement.addEventListener("submit", generateIngredientsList);
@@ -22,6 +20,10 @@ recipeFormElement.addEventListener("submit", generateIngredientsList);
 
   produceMyList(ingredients);
   input.value = ""; 
+
+  console.log("Form submitted");
+console.log("Raw input:", input.value);
+console.log("Ingredients list:", ingredients);
 }
   
 function prodceMyList(ingredients) {
