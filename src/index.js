@@ -1,9 +1,8 @@
+console.log("✅ index.js is connected and running");
 
 function generateIngredientsList(event){
 event.preventDefault();
  alert("creating your recipe...");
-
-console.log("✅ index.js is connected and running");
 
 const addedIngredients = new Set();
 let recipeFormElement = document.querySelector("#recipeGeneratorForm");
