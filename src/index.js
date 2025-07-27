@@ -1,20 +1,30 @@
+const addedIngredients = new Set();
+
 let recipeFormElement = document.querySelector("#recipeGeneratorForm");
 recipeFormElement.addEventListener("submit", generateIngredientsList);
+
 
 function generateIngredientsList(event){
 event.preventDefault();
  alert("creating your recipe...");
- console.log("JavaScript is connected");
+
 
   let input = document.querySelector(".AddYourIngredients");
   let rawIngredients = input.value.trim();
   if (rawIngredients.length === 0) return;
 
-  let ingredients = rawIngredients.split(",").map(item => item.trim()).filter(item => item !== "");
+  let ingredients = rawIngredients.split(",").map(item => item.trim().toLowerCase()).filter(item => item !== "" && !addedIngredients.has(item));
 
-  let list = document.querySelector("#ingredient-list");
+  ingredients.forEach(item => addedIngredients.add(item));
 
-  ingredients.forEach((ingredient) => {
+  produceMyList(ingredients);
+  input.value = ""; 
+}
+  
+function prodceMyList(ingredients) {
+
+let list = document.querySelector("#ingredeint-list");
+ingredients.forEach((ingredient) => {
     
     let li = document.createElement("li");
     let span = document.createElement("span");
@@ -28,5 +38,4 @@ event.preventDefault();
     });
   });
 
-  input.value = ""; 
- }
+}
