@@ -1,5 +1,3 @@
-console.log("✅ JS file loaded");
-
 
 function generateIngredientsList(event){
 event.preventDefault();
