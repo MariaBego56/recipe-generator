@@ -4,7 +4,7 @@ function generateIngredientsList(event){
 event.preventDefault();
  alert("creating your recipe...");
 
-const addedIngredients = new Set();
+let addedIngredients = new Set();
 let recipeFormElement = document.querySelector("#recipeGeneratorForm");
 recipeFormElement.addEventListener("submit", generateIngredientsList);
 
@@ -21,8 +21,7 @@ recipeFormElement.addEventListener("submit", generateIngredientsList);
 }
   
 function prodceMyList(ingredients) {
-
-const  list = document.querySelector("#ingredient-list");
+let list = document.querySelector("#ingredient-list");
 ingredients.forEach((ingredient) => {
     
     let li = document.createElement("li");
