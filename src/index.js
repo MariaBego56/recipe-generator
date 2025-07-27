@@ -3,6 +3,7 @@
 function generateIngredientsList(event){
 event.preventDefault();
  alert("creating your recipe...");
+ console.log("Form submitted");
 const addedIngredients = new Set();
 
 
@@ -11,19 +12,22 @@ let recipeFormElement = document.querySelector("#recipeGeneratorForm");
 recipeFormElement.addEventListener("submit", generateIngredientsList);
 
   let input = document.querySelector(".AddYourIngredients");
+  
+  console.log("Raw input:", input.value);
   let rawIngredients = input.value.trim();
   if (rawIngredients.length === 0) return;
 
   let ingredients = rawIngredients.split(",").map(item => item.trim().toLowerCase()).filter(item => item !== "" && !addedIngredients.has(item));
 
+  console.log("Ingredients list:", ingredients);
   ingredients.forEach(item => addedIngredients.add(item));
 
   produceMyList(ingredients);
   input.value = ""; 
 
-  console.log("Form submitted");
-console.log("Raw input:", input.value);
-console.log("Ingredients list:", ingredients);
+  
+
+
 }
   
 function prodceMyList(ingredients) {
