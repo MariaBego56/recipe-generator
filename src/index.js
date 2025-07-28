@@ -66,7 +66,10 @@ ingredients.forEach((ingredient) => {
     });
 
  if (addedIngredients.size >0) {
-   recipeButton.classList.add("visible");     
+
+  recipeButton.innerText = "Ta-da! Ready to cook?";
+  recipeButton.classList.add("visible");
+  recipeButton.classList.add("visible");     
   tw.callFunction(() => {
         alert("Creating recipe...");
       
