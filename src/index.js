@@ -23,7 +23,7 @@ const addedIngredients = new Set();
 const recipeFormElement = document.querySelector("#recipeGeneratorForm");
 const recipeButton = document.querySelector("#generateRecipe");
 const recipeResult = document.querySelector ("#recipeResult");
-const list = document.querySelector("#ingredient-list");
+
 
 
 recipeFormElement.addEventListener("submit", generateIngredientsList);
@@ -51,8 +51,9 @@ const ingredients = rawIngredients.split(",").map((item) => item.trim().toLowerC
 }
 
 function produceMyList(ingredients) {
+  const list = document.querySelector("#ingredient-list");
   
-ingredients.forEach((ingredient, index) => {
+ingredients.forEach((ingredient) => {
   const li = document.createElement("li");
   const span = document.createElement("span");
     li.appendChild(span); 
@@ -64,10 +65,11 @@ ingredients.forEach((ingredient, index) => {
       delay: 50,
     });
 
- if (index === ingredients.length - 1) {
-      tw.callFunction(() => {
+ if (addedIngredients.size >0) {
+   recipeButton.classList.add("visible");     
+  tw.callFunction(() => {
         alert("Creating recipe...");
-       recipeButton.classList.add("visible"); 
+      
 
       });
  }
