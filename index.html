@@ -19,18 +19,20 @@
     <main>
 
       <form id="recipeGeneratorForm">
-        <input type="text" class="AddYourIngredients" placeholder="what is it in your kitchen?" autofocus required
+        <input type="text" class="AddYourIngredients" placeholder="ingredients in my kitchen" autofocus required
           autocomplete="on" />
         <button type="button" id="addIngredients">Add Ingredients</button>
       </form>
       <div class="ingredientsList"> Ingredients hiding in my kitchen!
         <ul id="ingredient-list">
         </ul>
+
+        <button id="generateRecipe">Ta-da! Ready to
+          cook?
+        </button>
         <div class="recipe-header">
 
-          <strong>What's for dinner tonight?</strong><button id="generateRecipe">Ta-da! Ready to
-            cook?
-          </button>
+          <strong>What's for dinner tonight?</strong>
         </div>
         <div id="recipeResult"></div>
 
