@@ -101,11 +101,10 @@ text-align: left;
 
 }
 #generateRecipe.visible:hover {
-  background-color: #3c6a62;
+  background-color: #a9e8de;
 }
 
 .recipe-header{
-
   display: flex;
   align-items:  center;
   gap: 40px;
@@ -113,7 +112,7 @@ text-align: left;
 }
 
 .recipe-header strong {
-  font-size: 18px;
+  font-size: 25px;
   color: #060270;
 }
 
@@ -121,7 +120,6 @@ text-align: left;
   font-style: italic;
   color: #060270;
   background-color: rgba(171, 219, 227, 0.3);
-  /* soft blue like input background */
   padding: 10px;
   border-radius: 10px;
   margin-top: 10px;
