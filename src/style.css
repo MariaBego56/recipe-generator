@@ -37,7 +37,7 @@ text-align: center;
   padding: 10px;
   display: flex;
 }
-.addYourIngredients{  
+.AddYourIngredients{  
 margin: 30px auto;
   padding: 10px;
  width:70%;
@@ -48,16 +48,17 @@ margin: 30px auto;
   line-height: 1.5;
 
 }
-#addIngredientButton{
+#addIngredients {
   margin: 30px auto;
     padding: 20px;
     margin-left: 20px;
     border-radius: 25px;
-    border-color: #060270;
+    border: 2px solid #060270;
     background-color: rgba(6, 2, 112, 0.6);
     color:honeydew;
     font-size: 16px;
     font-weight: 550;
+    cursor: pointer;
 }
 .ingredientsList{
 margin-left: 40px;
@@ -78,33 +79,47 @@ text-align: left;
     
    
   }
-#generateRecipeButton {
+#generateRecipe {
   display: none;
   opacity: 0;
   transition: opacity 0.8s ease;
-  margin: 30px auto;
-    padding: 20px;
-    margin-left: 20px;
-    border-radius: 25px;
-    border-color: #060270;
-    background-color: rgba(6, 2, 112, 0.6);
-    color: honeydew;
-    font-size: 16px;
-    font-weight: 550;
 }
 
-#generateRecipeButton.visible{
+#generateRecipe.visible{
   display: inline-block;
   opacity: 1;
+  margin: 30px auto;
+  padding: 20px;
+  margin-left: 20px;
+  border-radius: 25px;
+  border: 2px solid #060270;
+  font-size: 16px;
   font-weight:600;
-  background-color: #f0f8ff;
-  color: #060270;
-  border-radius: 20px;
-  margin-top: 10px;
-border: 2px solid #060270;
-cursor: pointer;
-font-size: 16px;
+  background-color: rgba(6, 2, 112, 0.6);
+  color: honeydew;
+  cursor: pointer;
+
 }
 #generateRecipe.visible:hover {
   background-color: #3c6a62;
+}
+
+.recipe-header{
+
+  display: flex;
+  align-items:  center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.recipe-header strong {
+  font-size: 18px;
+  color: #060270;
+}
+@media (max-width: 600px) {
+  .recipe-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }

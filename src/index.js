@@ -26,6 +26,7 @@ const recipeResult = document.querySelector ("#recipeResult");
 
 
 recipeFormElement.addEventListener("submit", generateIngredientsList);
+document.querySelector("#addIngredients").addEventListener("click", generateIngredientsList);
 recipeButton.addEventListener("click", generateRecipe);
 
 
@@ -68,7 +69,5 @@ ingredients.forEach((ingredient) => {
 
   recipeButton.innerText = "Ta-da! Ready to cook?";
   recipeButton.classList.add("visible");
-  console.log("Button now visible:", recipeButton);
-
 
 }
