@@ -107,7 +107,7 @@ text-align: left;
 .recipe-header{
   display: flex;
   align-items:  center;
-  gap: 60px;
+  gap: 90px;
   margin-top: 10px;
 }
 
