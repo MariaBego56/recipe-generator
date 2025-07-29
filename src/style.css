@@ -108,13 +108,24 @@ text-align: left;
 
   display: flex;
   align-items:  center;
-  gap: 15px;
+  gap: 40px;
   margin-top: 10px;
 }
 
 .recipe-header strong {
   font-size: 18px;
   color: #060270;
+}
+
+.creating-recipe {
+  font-style: italic;
+  color: #060270;
+  background-color: rgba(171, 219, 227, 0.3);
+  /* soft blue like input background */
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: inline-block;
 }
 @media (max-width: 600px) {
   .recipe-header {

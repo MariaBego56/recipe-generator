@@ -1,20 +1,26 @@
 
+function displayRecipe(response) {
+  recipeResult.innerHTML = `<span class="creating-recipe">Creating recipe...</span>`;
 
-function displayRecipe(response){
-  recipeResult.innerHTML = "";
-     const tw = new Typewriter(recipeResult, { 
-      strings: response.data.answer,
-      autoStart: true,
-      delay:30,
-    });
-
+  new Typewriter(recipeResult, {
+    strings: response.data.answer,
+    autoStart: true,
+    delay: 30,
+  });
 }
-function generateRecipe(){
-let apiKey = "79c10854b8bbfdaa4tfa826305864ob";
-let context = "you are a very famous chef. You like to experiment with cooking that doesn't waste produce, so you like to use whatever is available. The produce can be from tin tuna to fresh mushrooms, you always have an idea. That idea always becomes a healthy nutritious recipe for a meal.";
-let prompt = `Write a dinner recipe using these ingredients: ${[...addedIngredients].join(", ")}`;
-let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
-axios.get(apiURL).then(displayRecipe);
+
+function generateRecipe() {
+  recipeResult.innerHTML = "<em>Creating recipe...</em>";
+
+  let apiKey = "79c10854b8bbfdaa4tfa826305864ob";
+  let context = "You are a very famous chef. You like to experiment with cooking that doesn't waste produce, so you like to use whatever is available. The produce can be from tin tuna to fresh mushrooms, you always have an idea. That idea always becomes a healthy nutritious recipe for a meal.";
+  let prompt = `Write a dinner recipe using these ingredients: ${[...addedIngredients].join(", ")}`;
+  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(prompt)}&context=${encodeURIComponent(context)}&key=${apiKey}`;
+  
+  axios.get(apiURL).then(displayRecipe).catch(error => {
+    recipeResult.innerHTML = `<strong style="color:red;">Error creating recipe. Please try again.</strong>`;
+    console.error(error);
+  });
 }
 
 
@@ -22,13 +28,12 @@ const addedIngredients = new Set();
 const recipeFormElement = document.querySelector("#recipeGeneratorForm");
 const recipeButton = document.querySelector("#generateRecipe");
 const recipeResult = document.querySelector ("#recipeResult");
-
+const addIngredientButton = document.querySelector("#addIngredients");
 
 
 recipeFormElement.addEventListener("submit", generateIngredientsList);
-document.querySelector("#addIngredients").addEventListener("click", generateIngredientsList);
 recipeButton.addEventListener("click", generateRecipe);
-
+addIngredientButton.addEventListener("click", generateIngredientsList);
 
 function generateIngredientsList(event)  {
 event.preventDefault();
