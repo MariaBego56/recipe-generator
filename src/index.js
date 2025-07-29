@@ -68,7 +68,7 @@ ingredients.forEach((ingredient) => {
 
   recipeButton.innerText = "Ta-da! Ready to cook?";
   recipeButton.classList.add("visible");
-  
+  console.log("Button now visible:", recipeButton);
 
 
 }
