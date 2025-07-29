@@ -83,14 +83,12 @@ text-align: left;
 #generateRecipe {
   display: none;
   opacity: 0;
-  transform: scale(0.95);
+  transition: opacity 0.8s ease;
 }
 
 #generateRecipe.visible{
   display: inline-block;
   opacity: 1;
-  transform: scale (1);
-  transition: opacity 0.8s;
   font-weight:600;
   background-color: #f0f8ff;
   color: #060270;

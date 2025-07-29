@@ -18,7 +18,6 @@ axios.get(apiURL).then(displayRecipe);
 }
 
 
-
 const addedIngredients = new Set();
 const recipeFormElement = document.querySelector("#recipeGeneratorForm");
 const recipeButton = document.querySelector("#generateRecipe");
@@ -69,7 +68,7 @@ ingredients.forEach((ingredient) => {
 
   recipeButton.innerText = "Ta-da! Ready to cook?";
   recipeButton.classList.add("visible");
-  recipeButton.classList.add("visible");     
+  
   tw.callFunction(() => {
         alert("Creating recipe...");
       
