@@ -78,10 +78,19 @@ text-align: left;
     
    
   }
-#generateRecipe {
+#generateRecipeButton {
   display: none;
   opacity: 0;
   transition: opacity 0.8s ease;
+  margin: 30px auto;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 25px;
+    border-color: #060270;
+    background-color: rgba(6, 2, 112, 0.6);
+    color: honeydew;
+    font-size: 16px;
+    font-weight: 550;
 }
 
 #generateRecipe.visible{
