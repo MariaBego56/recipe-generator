@@ -60,6 +60,9 @@ margin: 30px auto;
     font-weight: 550;
     cursor: pointer;
 }
+#addIngredients:hover {
+  background-color: #a9e8de;
+}
 .ingredientsList{
 margin-left: 40px;
 padding-bottom: 30px;
