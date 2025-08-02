@@ -40,8 +40,8 @@ function displayRecipe(response) {
 function generateRecipe() {
   recipeResult.innerHTML = "<em>Creating recipe...</em>";
 let apiKey = "79c10854b8bbfdaa4tfa826305864ob5";
-let context = "You are a very famous chef. You like to experiment with cooking that doesn't waste produce, so you like to use whatever is available. The produce can be from tin tuna to fresh mushrooms, you always have an idea. That idea always becomes a healthy nutritious recipe for a meal.";
-  let prompt = `Write a dinner recipe using these ingredients: ${[...addedIngredients].join(", ")}`;
+let context = "You are a very famous chef. You like to experiment with cooking that doesn't waste produce, so you like to use whatever is available. The produce can be from tin tuna to fresh mushrooms, you always have an idea. That idea always becomes a healthy nutritious recipe for a meal. You are brief and precise. You structure your recipes like this. 1. Name of the dish. 2. Clear list of ingredients. 3. systematic description of instructions to make the dish.";
+let prompt = `Write a dinner recipe using these ingredients: ${[...addedIngredients].join(", ")}`;
   let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(prompt)}&context=${encodeURIComponent(context)}&key=${apiKey}`;
 
   axios.get(apiURL).then(displayRecipe).catch(error => {
