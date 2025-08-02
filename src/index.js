@@ -1,31 +1,41 @@
-
 function displayRecipe(response) {
   let recipeText = response.data.answer;
   recipeResult.innerHTML = `<span class="creating-recipe">Creating recipe...</span>`;
 
   new Typewriter(recipeResult, {
-    strings: response.data.answer,
+    strings: recipeText,
     autoStart: true,
     delay: 30,
   });
-let dishName = recipeText.split("\n")[0].split(":")[0].trim();
-document.getElementById("dishName").textContent = dishName;
+
+
+  let dishNameLine = recipeText.split("\n")[0];
+  let dishName = dishNameLine.includes(":")
+    ? dishNameLine.split(":")[0].trim()
+    : dishNameLine.trim();
+  document.getElementById("dishName").textContent = dishName;
 
 
   let apiKey = "79c10854b8bbfdaa4tfa826305864ob5";
- let imagePrompt = `photo of ${dishName}, plated professionally`;
+  let imagePrompt = `photo of ${dishName}, plated professionally`;
   let imageApiUrl = `https://api.shecodes.io/images/v1/generate?prompt=${encodeURIComponent(imagePrompt)}&key=${apiKey}`;
 
-  axios.get(imageApiUrl).then(function (imageResponse){
-const dishImage = document.getElementById("dishImage");
-const imageUrl = imageResponse.data.url || imageResponse.data.image_url;
-      dishImage.src = imageUrl;
-      dishImage.style.display = "block";
+
+  axios.get(imageApiUrl)
+    .then(function (imageResponse) {
+      const dishImage = document.getElementById("dishImage");
+      const imageUrl = imageResponse.data.url || imageResponse.data.image_url;
+      if (imageUrl) {
+        dishImage.src = imageUrl;
+        dishImage.style.display = "block";
+      } else {
+        console.error("No image URL returned", imageResponse.data);
+      }
     })
     .catch(function (error) {
       console.error("Image fetch error:", error);
     });
-  }
+}
 
 function generateRecipe() {
   recipeResult.innerHTML = "<em>Creating recipe...</em>";
