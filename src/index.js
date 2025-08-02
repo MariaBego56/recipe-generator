@@ -8,39 +8,40 @@ function displayRecipe(response) {
     autoStart: true,
     delay: 30,
   });
-}
+let dishName = recipeText.split("\n")[0].(":")[0].trim();
+document.getElementById("dishName").textContent = dishName;
 
-function generateRecipe() {
-  recipeResult.innerHTML = "<em>Creating recipe...</em>";
 
   let apiKey = "79c10854b8bbfdaa4tfa826305864ob5";
-  let context = "You are a very famous chef. You like to experiment with cooking that doesn't waste produce, so you like to use whatever is available. The produce can be from tin tuna to fresh mushrooms, you always have an idea. That idea always becomes a healthy nutritious recipe for a meal.";
-  let prompt = `Write a dinner recipe using these ingredients: ${[...addedIngredients].join(", ")}`;
-  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(prompt)}&context=${encodeURIComponent(context)}&key=${apiKey}`;
  let imagePrompt = `photo of ${dishName}, plated professionally`;
   let imageApiUrl = `https://api.shecodes.io/images/v1/generate?prompt=${encodeURIComponent(imagePrompt)}&key=${apiKey}`;
 
-
-
-  axios.get(apiURL).then(displayRecipe).catch(error => {
-  dishName = document.getElementById("dishName").textContent = dishName;
-    recipeResult.innerHTML = `<strong style="color:red;">Error creating recipe. Please try again.</strong>`;
-    console.error(error);
-
-  });
-
   axios.get(imageApiUrl).then(function (imageResponse){
-dishImage = document.getElementById("dishImage");
- 
-  const imageUrl = imageResponse.data.url || imageResponse.data.image_url;
+const dishImage = document.getElementById("dishImage");
+const imageUrl = imageResponse.data.url || imageResponse.data.image_url;
       dishImage.src = imageUrl;
       dishImage.style.display = "block";
     })
     .catch(function (error) {
       console.error("Image fetch error:", error);
     });
-}
+  }
 
+function generateRecipe() {
+  recipeResult.innerHTML = "<em>Creating recipe...</em>";
+let apiKey = "79c10854b8bbfdaa4tfa826305864ob5";
+let context = "You are a very famous chef. You like to experiment with cooking that doesn't waste produce, so you like to use whatever is available. The produce can be from tin tuna to fresh mushrooms, you always have an idea. That idea always becomes a healthy nutritious recipe for a meal.";
+  let prompt = `Write a dinner recipe using these ingredients: ${[...addedIngredients].join(", ")}`;
+  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(prompt)}&context=${encodeURIComponent(context)}&key=${apiKey}`;
+
+  axios.get(apiURL).then(displayRecipe).catch(error => {
+  
+    recipeResult.innerHTML = `<strong style="color:red;">Error creating recipe. Please try again.</strong>`;
+    console.error(error);
+
+  });
+
+}
 
 
 const addedIngredients = new Set();
@@ -59,7 +60,6 @@ function generateIngredientsList(event)  {
 event.preventDefault();
 
 const list = document.querySelector("#ingredient-list");
-
 const input = document.querySelector(".AddYourIngredients");
 const rawIngredients = input.value.trim();
   if (rawIngredients.length === 0) return;
