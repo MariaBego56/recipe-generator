@@ -23,19 +23,24 @@
           autocomplete="on" />
         <button type="button" id="addIngredients">Add Ingredients</button>
       </form>
-      <div class="ingredientsList"> Today I've found...
+      <div class="ingredientsList"> <strong> Today I've found...</strong>
         <ul id="ingredient-list">
         </ul>
 
-        <button id="generateRecipe">Ready to
+        <button id="generateRecipe" class="centered">Ready to
           cook? Ta-Da!!
         </button>
         <div class="recipe-header">
 
           <strong>What's for dinner tonight? </strong>
+          <h2 id="dishName"></h2>
         </div>
-        <div id="recipeResult"></div>
-
+        <div class="recipe-layout">
+          <div id="recipeResult"></div>
+          <div id="dishImageContainer">
+            <img id="dishImage" src="" alt="Dish image" style="display:none;">
+          </div>
+        </div>
       </div>
 
     </main>
