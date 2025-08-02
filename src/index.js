@@ -1,4 +1,5 @@
 function displayRecipe(response) {
+  console.log("Recipe API response received:", response.data);
   let recipeText = response.data.answer;
   recipeResult.innerHTML = `<span class="creating-recipe">Creating recipe...</span>`;
 
@@ -18,14 +19,16 @@ function displayRecipe(response) {
 
   let apiKey = "79c10854b8bbfdaa4tfa826305864ob5";
   let imagePrompt = `photo of ${dishName}, plated professionally`;
-  let imageApiUrl = `https://api.shecodes.io/images/v1/generate?prompt=${encodeURIComponent(imagePrompt)}&key=${apiKey}`;
+  let imageapiUrl = `https://api.shecodes.io/images/v1/generate?prompt=${encodeURIComponent(imagePrompt)}&key=${apiKey}`;
+  console.log("🔗 Image API URL:", imageApiUrl);
 
-
-  axios.get(imageApiUrl)
+  axios.get(imageapiUrl)
     .then(function (imageResponse) {
+      console.log("✅ Image API response:", imageResponse.data);
       const dishImage = document.getElementById("dishImage");
       const imageUrl = imageResponse.data.url || imageResponse.data.image_url;
       if (imageUrl) {
+        console.log("📌 Image URL found:", imageUrl);
         dishImage.src = imageUrl;
         dishImage.style.display = "block";
       } else {
