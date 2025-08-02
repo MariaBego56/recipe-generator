@@ -8,7 +8,7 @@ function displayRecipe(response) {
     autoStart: true,
     delay: 30,
   });
-let dishName = recipeText.split("\n")[0].(":")[0].trim();
+let dishName = recipeText.split("\n")[0].split(":")[0].trim();
 document.getElementById("dishName").textContent = dishName;
 
 
@@ -43,15 +43,12 @@ let context = "You are a very famous chef. You like to experiment with cooking t
 
 }
 
-
 const addedIngredients = new Set();
 const recipeFormElement = document.querySelector("#recipeGeneratorForm");
 const recipeButton = document.querySelector("#generateRecipe");
 const recipeResult = document.querySelector ("#recipeResult");
 const addIngredientButton = document.querySelector("#addIngredients");
-const dishName = recipeText.split("\n")[0].split(":")[0];
 
-  
 recipeFormElement.addEventListener("submit", generateIngredientsList);
 recipeButton.addEventListener("click", generateRecipe);
 addIngredientButton.addEventListener("click", generateIngredientsList);
@@ -59,7 +56,7 @@ addIngredientButton.addEventListener("click", generateIngredientsList);
 function generateIngredientsList(event)  {
 event.preventDefault();
 
-const list = document.querySelector("#ingredient-list");
+
 const input = document.querySelector(".AddYourIngredients");
 const rawIngredients = input.value.trim();
   if (rawIngredients.length === 0) return;
