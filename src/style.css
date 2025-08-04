@@ -165,13 +165,15 @@ text-align: left;
   margin-top: 15px;
 }
 
-
-#dishImage {
-  max-width: 200px;
-  border-radius: 10px;
-  border: 2px solid #ccc;
+#cartoonChasingContainer {
+  width: 150px;
+  margin-top: 10px;
 }
 
+#chasingChicken {
+  width: 100%;
+  display: block;
+}
 
 @media (max-width: 600px) {
   .recipe-layout {
@@ -185,10 +187,6 @@ text-align: left;
         }
       }
 
-  #dishImage {
-    max-width: 90%;
-    margin-top: 10px;
-  }
 
   .recipe-header {
     flex-direction: column;
