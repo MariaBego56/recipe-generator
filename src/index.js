@@ -6,8 +6,8 @@ const addIngredientButton = document.querySelector("#addIngredients");
 
 // Cartoon switching and bouncing
 const cartoonScenes = [
-  "images/chefChasingChicken.png",
-  "images/rabbitChasingCarrot.png"
+  "images/chefChasingChicken.jpg",
+  "images/rabbitChasingCarrot.jpg"
 ];
 
 function showRandomCartoon() {
@@ -60,7 +60,7 @@ function produceMyList(ingredients) {
     });
   });
 
-  recipeButton.innerText = "Ta-da! Ready to cook?";
+  recipeButton.innerText = "Ready to cook?";
   recipeButton.classList.add("visible");
 }
 
