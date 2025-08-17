@@ -1,4 +1,4 @@
-/* Base styles */
+
 body {
   background-color: honeydew;
   font-family: Arial, sans-serif;
@@ -17,7 +17,7 @@ a {
   padding: 0 15px;
 }
 
-/* Header */
+
 header {
   margin-bottom: 30px;
   text-align: center;
@@ -35,7 +35,7 @@ h2 {
   color: rgb(6, 2, 112);
 }
 
-/* Form */
+
 #recipeGeneratorForm {
   display: flex;
   flex-wrap: wrap;
@@ -74,7 +74,7 @@ h2 {
   color: black;
 }
 
-/* Ingredient list */
+
 .ingredientsList {
   margin: 30px 0;
   font-size: 20px;
@@ -89,7 +89,7 @@ h2 {
   list-style-type: circle;
 }
 
-/* Recipe Button */
+
 #generateRecipe {
   display: none;
   opacity: 0;
@@ -115,7 +115,7 @@ h2 {
   color: black;
 }
 
-/* Recipe Output */
+
 .recipe-header {
   display: flex;
   align-items: center;
@@ -143,7 +143,7 @@ h2 {
   position: relative;
 }
 
-/* Layout with image */
+
 .recipe-layout {
   display: flex;
   align-items: flex-start;
@@ -152,7 +152,7 @@ h2 {
   flex-wrap: wrap;
 }
 
-/* Cartoon Container */
+
 #cartoonChasingContainer {
   width: 150px;
   margin-top: 10px;
@@ -163,7 +163,7 @@ h2 {
   display: block;
 }
 
-/* Bounce animation */
+
 @keyframes bounce {
 
   0%,
@@ -180,16 +180,8 @@ h2 {
   animation: bounce 0.8s infinite ease-in-out;
 }
 
-/* AI Dish Image */
-#dishImage {
-  max-width: 200px;
-  border-radius: 10px;
-  border: 2px solid #ccc;
-  display: block;
-  margin-top: 10px;
-}
 
-/* Recipe "creating..." indicator */
+
 .creating-recipe {
   display: inline-block;
   font-style: italic;
@@ -200,7 +192,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Responsive */
+
 @media (max-width: 600px) {
   #recipeGeneratorForm {
     flex-direction: column;
