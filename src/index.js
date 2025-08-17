@@ -1,3 +1,54 @@
+const cartoonScenes = [
+  "images/chefChasingChicken.png",
+  "images/rabbitChasingCarrot.png"
+];
+
+function showRandomCartoon() {
+  const cartoonImage = document.getElementById("cartoonImage");
+  const randomScene = cartoonScenes[Math.floor(Math.random() * cartoonScenes.length)];
+  
+  cartoonImage.src = randomScene;
+  cartoonImage.style.display = "block";
+  cartoonImage.classList.add("cartoon-bounce"); // Start bounce
+}
+
+function hideCartoon() {
+  const cartoonImage = document.getElementById("cartoonImage");
+  cartoonImage.classList.remove("cartoon-bounce"); // Stop bounce
+  cartoonImage.style.display = "none";
+}
+
+function generateRecipe() {
+  recipeResult.innerHTML = "<em>Creating recipe...</em>";
+  
+  showRandomCartoon();
+
+  let apiKey = "79c10854b8bbfdaa4tfa826305864ob5";
+  let context = "You are a very famous chef...";
+  let prompt = `Write a dinner recipe using these ingredients: ${[...addedIngredients].join(", ")}`;
+  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(prompt)}&context=${encodeURIComponent(context)}&key=${apiKey}`;
+
+  axios.get(apiURL)
+    .then(displayRecipe)
+    .catch(error => {
+      recipeResult.innerHTML = `<strong style="color:red;">Error creating recipe. Please try again.</strong>`;
+      console.error(error);
+    });
+}
+
+function displayRecipe(response) {
+  hideCartoon(); 
+
+  let recipeText = response.data.answer;
+  recipeResult.innerHTML = `<span class="creating-recipe">Creating recipe...</span>`;
+
+  new Typewriter(recipeResult, {
+    strings: recipeText,
+    autoStart: true,
+    delay: 30,
+  });
+}
+
 function displayRecipe(response) {
  
   let recipeText = response.data.answer;
