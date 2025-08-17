@@ -4,7 +4,7 @@ const recipeButton = document.querySelector("#generateRecipe");
 const recipeResult = document.querySelector("#recipeResult");
 const addIngredientButton = document.querySelector("#addIngredients");
 
-// Cartoon switching and bouncing
+
 const cartoonScenes = [
   "images/chefChasingChicken.png",
   "images/rabbitChasingCarrot.png"
@@ -24,7 +24,7 @@ function hideCartoon() {
   cartoonImage.style.display = "none";
 }
 
-// Generate ingredients list
+
 function generateIngredientsList(event) {
   event.preventDefault();
   const input = document.querySelector(".AddYourIngredients");
@@ -43,7 +43,7 @@ function generateIngredientsList(event) {
   input.value = "";
 }
 
-// Display ingredients with typewriter
+
 function produceMyList(ingredients) {
   const list = document.querySelector("#ingredient-list");
 
@@ -64,7 +64,7 @@ function produceMyList(ingredients) {
   recipeButton.classList.add("visible");
 }
 
-// Main recipe generation
+
 function generateRecipe() {
   recipeResult.innerHTML = "<em>Creating recipe...</em>";
   showRandomCartoon();
@@ -84,7 +84,6 @@ function generateRecipe() {
     });
 }
 
-// Handle recipe display and image
 function displayRecipe(response) {
   hideCartoon();
 
@@ -96,36 +95,15 @@ function displayRecipe(response) {
     autoStart: true,
     delay: 30,
   });
-
+}
   const dishNameLine = recipeText.split("\n")[0];
   const dishName = dishNameLine.includes(":")
     ? dishNameLine.split(":")[0].trim()
     : dishNameLine.trim();
   document.getElementById("dishName").textContent = dishName;
 
-  // Fetch AI image of dish
-  const apiKey = "79c10854b8bbfdaa4tfa826305864ob5";
-  const imagePrompt = `photo of ${dishName}, plated professionally`;
-  const imageapiUrl = `https://api.shecodes.io/images/v1/generate?prompt=${encodeURIComponent(imagePrompt)}&key=${apiKey}`;
+  
 
-  axios
-    .get(imageapiUrl)
-    .then(function (imageResponse) {
-      const dishImage = document.getElementById("dishImage");
-      const imageUrl = imageResponse.data.url || imageResponse.data.image_url;
-      if (imageUrl) {
-        dishImage.src = imageUrl;
-        dishImage.style.display = "block";
-      } else {
-        console.error("No image URL returned", imageResponse.data);
-      }
-    })
-    .catch(function (error) {
-      console.error("Image fetch error:", error);
-    });
-}
-
-// Event listeners
 recipeFormElement.addEventListener("submit", generateIngredientsList);
 recipeButton.addEventListener("click", generateRecipe);
 addIngredientButton.addEventListener("click", generateIngredientsList);
