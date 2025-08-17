@@ -186,7 +186,22 @@ text-align: left;
           width: 100%;
         }
       }
+/* Cartoon bounce animation */
+@keyframes bounce {
 
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.cartoon-bounce {
+  animation: bounce 0.8s infinite ease-in-out;
+}
 
   .recipe-header {
     flex-direction: column;
